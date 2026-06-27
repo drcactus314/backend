@@ -1,5 +1,11 @@
-const express = require('express');
-const bodyParser = require('body-parser');
+import 'dotenv/config';
+
+
+import express from 'express';
+import bodyParser from 'body-parser';
+import './config/db.js';
+
+import authRouter from './routes/authRoutes.js'
 
 const app = express();
 
@@ -9,7 +15,10 @@ const port = 3000;
 //middleware
 
 app.use(bodyParser.json());
+
+app.use('/api', authRouter)
+
 app.listen(port, ()=>{
-    console.log(`Port is listening on port ${port}`);
+    console.log(`Server is listening on port ${port}`);
     
 })
