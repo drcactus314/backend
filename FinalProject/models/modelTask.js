@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const TaskSchema = mongoose.Schema({
+const taskSchema = mongoose.Schema({
     description: {
         type: String,
         require: true,
@@ -16,6 +16,6 @@ const TaskSchema = mongoose.Schema({
     
 });
 
-const User = mongoose.model('Task', userSchema);
+const User = mongoose.model('Task', taskSchema);
 
 export default User;
